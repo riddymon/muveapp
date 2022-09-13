@@ -32,13 +32,6 @@ export default function PolicyButton({
       alignItems: "center",
       padding: 10,
       marginTop: 50,
-      shadowOffset: {
-        width: 0,
-        height: 10,
-      },
-      shadowOpacity: 0.25,
-      shadowRadius: 3.84,
-      elevation: 5,
       width: 300,
     },
   });

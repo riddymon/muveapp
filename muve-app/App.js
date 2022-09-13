@@ -4,11 +4,11 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import Contact from "./screens/Contact";
 import Home from "./screens/Home";
-import Team from "./screens/Team";
 import Colors from "./constants/Colors";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import * as Font from "expo-font";
 import BookStackScreen from "./screens/StackNavigators/BookStackScreen";
+import TeamStackScreen from "./screens/StackNavigators/TeamStackScreen";
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -19,6 +19,7 @@ export default function App() {
       "Raleway-Regular": require("./assets/fonts/Raleway-Regular.ttf"),
       "Raleway-Bold": require("./assets/fonts/Raleway-Bold.ttf"),
       "Raleway-Light": require("./assets/fonts/Raleway-Light.ttf"),
+      "Raleway-Thin": require("./assets/fonts/Raleway-Thin.ttf"),
       "Roboto-Thin": require("./assets/fonts/Roboto-Thin.ttf"),
       "Roboto-Light": require("./assets/fonts/Roboto-Light.ttf"),
       "Roboto-Bold": require("./assets/fonts/Roboto-Bold.ttf"),
@@ -58,6 +59,7 @@ export default function App() {
               tabBarIcon: ({ color }) => (
                 <Ionicons name="home" size={20} color={color}></Ionicons>
               ),
+              tabBarLabel: <Text style={styles.tabBarLabel}>Home</Text>,
             }}
           />
 
@@ -72,16 +74,18 @@ export default function App() {
                   color={color}
                 ></Ionicons>
               ),
+              tabBarLabel: <Text style={styles.tabBarLabel}>Book</Text>,
             }}
           />
 
           <Tab.Screen
             name="The Team"
-            component={Team}
+            component={TeamStackScreen}
             options={{
               tabBarIcon: ({ color }) => (
                 <Ionicons name="people" size={20} color={color}></Ionicons>
               ),
+              tabBarLabel: <Text style={styles.tabBarLabel}>The Team</Text>,
             }}
           />
 
@@ -92,6 +96,7 @@ export default function App() {
               tabBarIcon: ({ color }) => (
                 <Ionicons name="call" size={20} color={color}></Ionicons>
               ),
+              tabBarLabel: <Text style={styles.tabBarLabel}>Contact Us</Text>,
             }}
           />
         </Tab.Navigator>
@@ -100,4 +105,6 @@ export default function App() {
   }
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  tabBarLabel: { fontFamily: "Raleway-Regular" },
+});

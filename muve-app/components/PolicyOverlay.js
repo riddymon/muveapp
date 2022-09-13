@@ -198,18 +198,18 @@ export default function PolicyOverlay({ type, close } = props) {
 
 const styles = StyleSheet.create({
   overlayTitle: {
-    fontFamily: "Raleway-BoldItalic",
+    fontFamily: "Raleway-Bold",
     fontSize: 22,
     marginBottom: 10,
   },
   overlaySubTitle: {
-    fontFamily: "Raleway-BoldItalic",
+    fontFamily: "Raleway-Bold",
     fontSize: 15,
     marginBottom: 10,
     textAlign: "justify",
   },
   title: {
-    fontFamily: "Raleway-Italic",
+    fontFamily: "Raleway-Regular",
     fontSize: 17,
     marginTop: 5,
   },
@@ -217,7 +217,7 @@ const styles = StyleSheet.create({
     marginTop: 5,
     marginBottom: 5,
     textAlign: "justify",
-    fontFamily: "Raleway-LightItalic",
+    fontFamily: "Raleway-Light",
   },
   scroller: {
     height: "100%",

@@ -923,6 +923,7 @@ export default function Home() {
             </View>
           </CollapsibleList>
         </View>
+        <View style={{ width: "100%", marginVertical: 10 }}></View>
       </ScrollView>
     </SafeAreaView>
   );
@@ -1013,7 +1014,7 @@ const styles = StyleSheet.create({
   },
   wrapperCollapsibleList: {
     flex: 1,
-    marginTop: 20,
+    marginTop: 10,
     overflow: "hidden",
     backgroundColor: "#ECECEC",
     borderRadius: 5,
@@ -1025,14 +1026,15 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   button: {
-    backgroundColor: Colors.activeGreen,
+    backgroundColor: Colors.navigationGreen,
   },
 
   buttonTitle: {
     fontFamily: "Roboto-Light",
-    fontSize: 20,
+    fontSize: 18,
     textAlign: "center",
     paddingVertical: 10,
+    color: Colors.white,
   },
 
   buttonInstructions: {

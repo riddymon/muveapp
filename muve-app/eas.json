@@ -1,0 +1,21 @@
+{
+    "build": {
+      "development": {
+        "developmentClient": true,
+        "distribution": "internal",
+        "ios": {
+            "simulator": true
+          },
+          "env": {
+           "EAS_NO_VCS": "1" 
+          }
+      },
+      "preview": {
+        "distribution": "internal",
+        "env": {
+         "EAS_NO_VCS": "1" 
+        }
+      },
+      "production": {}
+    }
+  }
