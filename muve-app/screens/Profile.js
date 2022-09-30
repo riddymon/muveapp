@@ -2,19 +2,27 @@ import { View, Text, StyleSheet, Image } from "react-native";
 import { useLayoutEffect } from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import Colors from "../constants/Colors";
+import { StatusBar } from "react-native-web";
 
 export default function Profile({ navigation, route }) {
   const { profile } = route.params;
   useLayoutEffect(() => {
     navigation.setOptions({
       title: profile.name,
-      headerTintColor: profile.name === "Wan Benlate" ? "black" : "white",
+      headerTintColor:
+        profile.name === "Wan Benlate" || profile.name === "Candace Young, RMT"
+          ? "black"
+          : "white",
       headerStyle: {
         backgroundColor: profile.color,
       },
       headerTitleStyle: {
         fontFamily: "Raleway-Regular",
-        color: profile.name === "Wan Benlate" ? "black" : "white",
+        color:
+          profile.name === "Wan Benlate" ||
+          profile.name === "Candace Young, RMT"
+            ? "black"
+            : "white",
       },
     });
   }, [navigation]);
@@ -48,7 +56,10 @@ export default function Profile({ navigation, route }) {
 
     profileTitle: {
       fontFamily: "Raleway-Regular",
-      color: profile.name === "Wan Benlate" ? "black" : Colors.white,
+      color:
+        profile.name === "Wan Benlate" || profile.name === "Candace Young, RMT"
+          ? "black"
+          : Colors.white,
       fontSize: 18,
       marginTop: 10,
     },
@@ -61,7 +72,10 @@ export default function Profile({ navigation, route }) {
 
     profileNumber: {
       fontFamily: "Raleway-Thin",
-      color: profile.name === "Wan Benlate" ? "black" : Colors.white,
+      color:
+        profile.name === "Wan Benlate" || profile.name === "Candace Young, RMT"
+          ? "black"
+          : Colors.white,
       fontSize: 18,
       marginTop: 5,
     },
@@ -75,7 +89,10 @@ export default function Profile({ navigation, route }) {
       textAlign: "justify",
       fontFamily: "Raleway-Regular",
       fontSize: 14,
-      color: profile.name === "Wan Benlate" ? "black" : Colors.white,
+      color:
+        profile.name === "Wan Benlate" || profile.name === "Candace Young, RMT"
+          ? "black"
+          : Colors.white,
       opacity: 0.7,
     },
 
@@ -114,6 +131,7 @@ export default function Profile({ navigation, route }) {
       <View style={styles.sloganContainer}>
         <Text style={styles.sloganText}>"{profile.quote}"</Text>
       </View>
+      <StatusBar style="light" />
     </View>
   );
 }

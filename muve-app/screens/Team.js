@@ -2,12 +2,14 @@ import { View, Text, StyleSheet } from "react-native";
 import team from "../assets/team";
 import ProfileBubble from "../components/ProfileBubble";
 import { useNavigation } from "@react-navigation/native";
+import { StatusBar } from "react-native-web";
 
 export default function Team() {
   const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
+      <StatusBar style="dark" />
       <View style={styles.buttonContainer}>
         {team.map((profile) => {
           return (

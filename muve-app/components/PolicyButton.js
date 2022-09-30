@@ -9,7 +9,7 @@ export default function PolicyButton({
   const styles = StyleSheet.create({
     container: {
       display: "flex",
-      borderRadius: 5,
+      borderRadius: 20,
       backgroundColor: Colors.policyButtonGreen,
       marginVertical: 5,
       textAlign: "center",
@@ -24,7 +24,7 @@ export default function PolicyButton({
     },
     containerContinue: {
       display: "flex",
-      borderRadius: 5,
+      borderRadius: 20,
       backgroundColor: Colors.buttonBlue,
       marginVertical: 5,
       textAlign: "center",
@@ -37,7 +37,7 @@ export default function PolicyButton({
   });
 
   return (
-    <TouchableOpacity activeOpacity={0.4} onPress={onPress}>
+    <TouchableOpacity activeOpacity={0.8} onPress={onPress}>
       <View
         style={continueBooking ? styles.containerContinue : styles.container}
       >

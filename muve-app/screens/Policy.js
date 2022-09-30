@@ -7,6 +7,7 @@ import Swirl from "../assets/images/swirl.svg";
 import PolicyButton from "../components/PolicyButton";
 import { Overlay } from "react-native-elements";
 import PolicyOverlay from "../components/PolicyOverlay";
+import { StatusBar } from "react-native-web";
 
 export default function Policy() {
   const [visible, setVisible] = useState(false);
@@ -60,6 +61,8 @@ export default function Policy() {
           overlayStyle={{
             height: "80%",
             width: "85%",
+            borderRadius: 20,
+            paddingTop: 10,
           }}
           animationType="fade"
         >
@@ -73,6 +76,7 @@ export default function Policy() {
           />
         </View>
       </View>
+      <StatusBar style="dark" />
     </SafeAreaView>
   );
 }
@@ -84,7 +88,7 @@ const styles = StyleSheet.create({
     height: "100%",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: Colors.backgroundGrey,
+    backgroundColor: Colors.grey,
   },
 
   policyContainer: {

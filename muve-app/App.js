@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, ActivityIndicator } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
-import Contact from "./screens/Contact";
 import Home from "./screens/Home";
 import Colors from "./constants/Colors";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import * as Font from "expo-font";
 import BookStackScreen from "./screens/StackNavigators/BookStackScreen";
 import TeamStackScreen from "./screens/StackNavigators/TeamStackScreen";
+import ContactStackScreen from "./screens/StackNavigators/ContactStackScreen";
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -38,8 +38,8 @@ export default function App() {
 
   if (!fontsLoaded) {
     return (
-      <View>
-        <Text>Loading...</Text>
+      <View style={styles.container}>
+        <ActivityIndicator size="large" color={Colors.navigationGreen} />
       </View>
     );
   } else {
@@ -91,7 +91,7 @@ export default function App() {
 
           <Tab.Screen
             name="Contact Us"
-            component={Contact}
+            component={ContactStackScreen}
             options={{
               tabBarIcon: ({ color }) => (
                 <Ionicons name="call" size={20} color={color}></Ionicons>
@@ -107,4 +107,9 @@ export default function App() {
 
 const styles = StyleSheet.create({
   tabBarLabel: { fontFamily: "Raleway-Regular" },
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    backgroundColor: "white",
+  },
 });
