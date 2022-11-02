@@ -1,7 +1,10 @@
-import { View, Text, ScrollView, StyleSheet } from "react-native";
+import { View, Text, ScrollView, StyleSheet, Platform } from "react-native";
 import PolicyButton from "./PolicyButton";
+import { StatusBar } from "expo-status-bar";
 
 export default function TopicsOverlay({ type, close } = props) {
+  const bullet = Platform.OS === "ios" ? "\u2022" : "\u2B24";
+
   const displayInfo = () => {
     if (type === "benefits") {
       return (
@@ -38,7 +41,7 @@ export default function TopicsOverlay({ type, close } = props) {
             <View style={styles.itemBulletContentList}>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -49,7 +52,7 @@ export default function TopicsOverlay({ type, close } = props) {
               </View>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -60,7 +63,7 @@ export default function TopicsOverlay({ type, close } = props) {
               </View>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -71,7 +74,7 @@ export default function TopicsOverlay({ type, close } = props) {
               </View>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -88,7 +91,7 @@ export default function TopicsOverlay({ type, close } = props) {
             <View style={styles.itemBulletContentList}>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -99,7 +102,7 @@ export default function TopicsOverlay({ type, close } = props) {
               </View>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -110,7 +113,7 @@ export default function TopicsOverlay({ type, close } = props) {
               </View>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -121,7 +124,7 @@ export default function TopicsOverlay({ type, close } = props) {
               </View>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -132,7 +135,7 @@ export default function TopicsOverlay({ type, close } = props) {
               </View>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -143,7 +146,7 @@ export default function TopicsOverlay({ type, close } = props) {
               </View>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -154,7 +157,7 @@ export default function TopicsOverlay({ type, close } = props) {
               </View>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -165,7 +168,7 @@ export default function TopicsOverlay({ type, close } = props) {
               </View>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -176,7 +179,7 @@ export default function TopicsOverlay({ type, close } = props) {
               </View>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -187,7 +190,7 @@ export default function TopicsOverlay({ type, close } = props) {
               </View>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -198,7 +201,7 @@ export default function TopicsOverlay({ type, close } = props) {
               </View>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -209,7 +212,7 @@ export default function TopicsOverlay({ type, close } = props) {
               </View>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -220,7 +223,7 @@ export default function TopicsOverlay({ type, close } = props) {
               </View>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -231,7 +234,7 @@ export default function TopicsOverlay({ type, close } = props) {
               </View>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -242,7 +245,7 @@ export default function TopicsOverlay({ type, close } = props) {
               </View>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -253,7 +256,7 @@ export default function TopicsOverlay({ type, close } = props) {
               </View>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -264,7 +267,7 @@ export default function TopicsOverlay({ type, close } = props) {
               </View>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -275,7 +278,7 @@ export default function TopicsOverlay({ type, close } = props) {
               </View>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -286,7 +289,7 @@ export default function TopicsOverlay({ type, close } = props) {
               </View>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -297,7 +300,7 @@ export default function TopicsOverlay({ type, close } = props) {
               </View>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -308,7 +311,7 @@ export default function TopicsOverlay({ type, close } = props) {
               </View>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -319,7 +322,7 @@ export default function TopicsOverlay({ type, close } = props) {
               </View>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -330,7 +333,7 @@ export default function TopicsOverlay({ type, close } = props) {
               </View>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -341,7 +344,7 @@ export default function TopicsOverlay({ type, close } = props) {
               </View>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -352,7 +355,7 @@ export default function TopicsOverlay({ type, close } = props) {
               </View>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -363,7 +366,7 @@ export default function TopicsOverlay({ type, close } = props) {
               </View>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -374,7 +377,7 @@ export default function TopicsOverlay({ type, close } = props) {
               </View>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -385,7 +388,7 @@ export default function TopicsOverlay({ type, close } = props) {
               </View>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -396,7 +399,7 @@ export default function TopicsOverlay({ type, close } = props) {
               </View>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -420,6 +423,7 @@ export default function TopicsOverlay({ type, close } = props) {
             </Text>
           </ScrollView>
           <PolicyButton title="Close" onPress={close} />
+          <StatusBar style="dark" />
         </View>
       );
     }
@@ -489,6 +493,7 @@ export default function TopicsOverlay({ type, close } = props) {
             </Text>
           </ScrollView>
           <PolicyButton title="Close" onPress={close} />
+          <StatusBar style="dark" />
         </View>
       );
     }
@@ -506,7 +511,7 @@ export default function TopicsOverlay({ type, close } = props) {
             <View style={styles.itemBulletContentList}>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -517,7 +522,7 @@ export default function TopicsOverlay({ type, close } = props) {
               </View>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -528,7 +533,7 @@ export default function TopicsOverlay({ type, close } = props) {
               </View>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -539,7 +544,7 @@ export default function TopicsOverlay({ type, close } = props) {
               </View>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -550,7 +555,7 @@ export default function TopicsOverlay({ type, close } = props) {
               </View>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -561,7 +566,7 @@ export default function TopicsOverlay({ type, close } = props) {
               </View>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -572,7 +577,7 @@ export default function TopicsOverlay({ type, close } = props) {
               </View>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -583,7 +588,7 @@ export default function TopicsOverlay({ type, close } = props) {
               </View>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -594,7 +599,7 @@ export default function TopicsOverlay({ type, close } = props) {
               </View>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -605,7 +610,7 @@ export default function TopicsOverlay({ type, close } = props) {
               </View>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -650,7 +655,7 @@ export default function TopicsOverlay({ type, close } = props) {
             <View style={styles.itemBulletContentList}>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -661,7 +666,7 @@ export default function TopicsOverlay({ type, close } = props) {
               </View>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -711,7 +716,7 @@ export default function TopicsOverlay({ type, close } = props) {
             <View style={styles.itemBulletContentList}>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -722,7 +727,7 @@ export default function TopicsOverlay({ type, close } = props) {
               </View>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -733,7 +738,7 @@ export default function TopicsOverlay({ type, close } = props) {
               </View>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -744,7 +749,7 @@ export default function TopicsOverlay({ type, close } = props) {
               </View>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -755,7 +760,7 @@ export default function TopicsOverlay({ type, close } = props) {
               </View>
               <View style={styles.itemRow}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -804,6 +809,7 @@ export default function TopicsOverlay({ type, close } = props) {
             </Text>
           </ScrollView>
           <PolicyButton title="Close" onPress={close} />
+          <StatusBar style="dark" />
         </View>
       );
     }

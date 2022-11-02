@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, StyleSheet, ScrollView } from "react-native";
 import team from "../assets/team";
 import ProfileBubble from "../components/ProfileBubble";
 import { useNavigation } from "@react-navigation/native";
@@ -9,20 +9,22 @@ export default function Team() {
 
   return (
     <View style={styles.container}>
-      <StatusBar style="dark" />
-      <View style={styles.buttonContainer}>
-        {team.map((profile) => {
-          return (
-            <ProfileBubble
-              profile={profile}
-              key={profile.name}
-              handlePress={() => {
-                navigation.navigate("Profile", { profile: profile });
-              }}
-            />
-          );
-        })}
-      </View>
+      <ScrollView style={styles.scrollContainer}>
+        <StatusBar style="dark" />
+        <View style={styles.buttonContainer}>
+          {team.map((profile) => {
+            return (
+              <ProfileBubble
+                profile={profile}
+                key={profile.name}
+                handlePress={() => {
+                  navigation.navigate("Profile", { profile: profile });
+                }}
+              />
+            );
+          })}
+        </View>
+      </ScrollView>
     </View>
   );
 }
@@ -35,10 +37,16 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     width: "100%",
+    height: "100%",
     flex: 1,
-    padding: 15,
+    paddingHorizontal: 15,
+    paddingTop: 15,
+    paddingBottom: 0,
   },
 
+  scrollContainer: {
+    height: "100%",
+  },
   buttonContainer: {
     width: "100%",
   },

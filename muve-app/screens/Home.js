@@ -1,22 +1,25 @@
 import { useState } from "react";
-import { Image, View, Text, ScrollView, ImageBackground } from "react-native";
+import {
+  View,
+  Text,
+  ScrollView,
+  ImageBackground,
+  Platform,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { useNavigation } from "@react-navigation/native";
 import Colors from "../constants/Colors";
 import { StyleSheet } from "react-native";
 import Swirl from "../assets/images/swirl.svg";
 import ColoredLine from "../components/Separator";
-import CollapsibleList from "react-native-collapsible-list";
 import InfoButton from "../components/InfoButton";
 import { Overlay } from "react-native-elements";
 import TopicsOverlay from "../components/TopicsOverlay";
 import { StatusBar } from "expo-status-bar";
 
 export default function Home() {
-  const navigation = useNavigation();
-
   const [visible, setVisible] = useState(false);
   const [infoType, setInfoType] = useState("");
+  const bullet = Platform.OS === "ios" ? "\u2022" : "\u2B24";
 
   const toggleOverlay = () => {
     setVisible(!visible);
@@ -77,7 +80,7 @@ export default function Home() {
             <View style={styles.contentList}>
               <View style={styles.row}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -88,7 +91,7 @@ export default function Home() {
               </View>
               <View style={styles.row}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -99,7 +102,7 @@ export default function Home() {
               </View>
               <View style={styles.row}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -110,7 +113,7 @@ export default function Home() {
               </View>
               <View style={styles.row}>
                 <View style={styles.bullet}>
-                  <Text>{"\u2B24"}</Text>
+                  <Text>{bullet}</Text>
                 </View>
                 <View style={styles.bulletText}>
                   <Text style={styles.bulletTextItem}>
@@ -161,6 +164,7 @@ export default function Home() {
           paddingTop: 10,
         }}
         animationType="fade"
+        statusBarTranslucent
       >
         <TopicsOverlay type={infoType} close={toggleOverlay} />
       </Overlay>
@@ -182,7 +186,8 @@ const styles = StyleSheet.create({
   },
   scrollContainer: {
     height: "100%",
-    paddingBottom: 200,
+    paddingBottom: 150,
+    backgroundColor: "black",
   },
   homeTitle: {
     fontFamily: "Raleway-Regular",
@@ -263,5 +268,6 @@ const styles = StyleSheet.create({
   },
   mainContent: {
     marginBottom: 10,
+    paddingBottom: 20,
   },
 });

@@ -1,5 +1,6 @@
 import { View, Text, ScrollView, StyleSheet } from "react-native";
 import PolicyButton from "./PolicyButton";
+import { StatusBar } from "expo-status-bar";
 
 export default function PolicyOverlay({ type, close } = props) {
   const displayPolicy = () => {
@@ -56,6 +57,7 @@ export default function PolicyOverlay({ type, close } = props) {
             </Text>
           </ScrollView>
           <PolicyButton title="Close" onPress={close} />
+          <StatusBar style="dark" />
         </View>
       );
     }
@@ -188,6 +190,7 @@ export default function PolicyOverlay({ type, close } = props) {
             </Text>
           </ScrollView>
           <PolicyButton title="Close" onPress={close} continueButton={false} />
+          <StatusBar style="dark" />
         </View>
       );
     }
@@ -225,5 +228,6 @@ const styles = StyleSheet.create({
   },
   container: {
     height: "100%",
+    paddingTop: 5,
   },
 });

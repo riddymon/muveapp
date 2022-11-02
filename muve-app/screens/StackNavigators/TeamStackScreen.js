@@ -3,12 +3,12 @@ import Colors from "../../constants/Colors";
 import Team from "../../screens/Team";
 import Profile from "../../screens/Profile";
 
-const BookStack = createNativeStackNavigator();
+const TeamStack = createNativeStackNavigator();
 
 export default function TeamStackScreen() {
   return (
-    <BookStack.Navigator>
-      <BookStack.Screen
+    <TeamStack.Navigator>
+      <TeamStack.Screen
         name="Team"
         component={Team}
         options={{
@@ -26,7 +26,7 @@ export default function TeamStackScreen() {
           },
         }}
       />
-      <BookStack.Screen
+      <TeamStack.Screen
         name="Profile"
         component={Profile}
         options={{
@@ -39,8 +39,9 @@ export default function TeamStackScreen() {
             fontFamily: "Raleway-Regular",
             color: "white",
           },
+          headerBackTitle: "Back",
         }}
       />
-    </BookStack.Navigator>
+    </TeamStack.Navigator>
   );
 }

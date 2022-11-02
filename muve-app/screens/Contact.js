@@ -45,7 +45,7 @@ export default function Contact() {
           ></Ionicons>
         </View>
         <View style={styles.infoDetails}>
-          <Text style={styles.infoDetailsText}>(519) 505-3037</Text>
+          <Text style={styles.infoDetailsText}>(226) 338-7959</Text>
         </View>
       </View>
       <View style={styles.infoContainer}>

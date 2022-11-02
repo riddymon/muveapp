@@ -31,6 +31,7 @@ export default function BookStackScreen() {
           headerStyle: {
             backgroundColor: "transparent",
           },
+          headerBackTitle: "Back",
         }}
       />
     </BookStack.Navigator>

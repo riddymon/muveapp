@@ -1,6 +1,5 @@
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, ScrollView } from "react-native";
 import { useLayoutEffect } from "react";
-import Ionicons from "@expo/vector-icons/Ionicons";
 import Colors from "../constants/Colors";
 import { StatusBar } from "react-native-web";
 
@@ -106,32 +105,30 @@ export default function Profile({ navigation, route }) {
       backgroundColor: Colors.white,
       borderRadius: 50,
     },
+
+    scrollContainer: {
+      height: "100%",
+      backgroundColor: profile.color,
+    },
   });
 
   return (
-    <View style={styles.container}>
-      <View style={styles.imageContainer}>
-        <Image style={styles.image} source={profile.image} />
-      </View>
-      <View>
-        <Text style={styles.profileTitle}>{profile.longTitle}</Text>
-        <View style={styles.profileSubTitle}>
-          <View>
-            {profile.telephone && (
-              <Text style={styles.profileNumber}>
-                Phone: {profile.telephone}
-              </Text>
-            )}
-          </View>
+    <ScrollView style={styles.scrollContainer}>
+      <View style={styles.container}>
+        <View style={styles.imageContainer}>
+          <Image style={styles.image} source={profile.image} />
         </View>
+        <View>
+          <Text style={styles.profileTitle}>{profile.longTitle}</Text>
+        </View>
+        <View style={styles.description}>
+          <Text style={styles.descriptionText}>{profile.description}</Text>
+        </View>
+        <View style={styles.sloganContainer}>
+          <Text style={styles.sloganText}>"{profile.quote}"</Text>
+        </View>
+        <StatusBar style="light" />
       </View>
-      <View style={styles.description}>
-        <Text style={styles.descriptionText}>{profile.description}</Text>
-      </View>
-      <View style={styles.sloganContainer}>
-        <Text style={styles.sloganText}>"{profile.quote}"</Text>
-      </View>
-      <StatusBar style="light" />
-    </View>
+    </ScrollView>
   );
 }

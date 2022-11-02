@@ -7,7 +7,7 @@ import Swirl from "../assets/images/swirl.svg";
 import PolicyButton from "../components/PolicyButton";
 import { Overlay } from "react-native-elements";
 import PolicyOverlay from "../components/PolicyOverlay";
-import { StatusBar } from "react-native-web";
+import { StatusBar } from "expo-status-bar";
 
 export default function Policy() {
   const [visible, setVisible] = useState(false);
@@ -65,6 +65,7 @@ export default function Policy() {
             paddingTop: 10,
           }}
           animationType="fade"
+          statusBarTranslucent
         >
           <PolicyOverlay type={policyType} close={toggleOverlay} />
         </Overlay>

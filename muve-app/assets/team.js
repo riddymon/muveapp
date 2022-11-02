@@ -38,7 +38,7 @@ const team = [
     quote: "Self care is not selfish",
     telephone: "",
     description:
-      "I'm from Thailand and I received my authentic traditional Thai massage training in Thailand in 2006. I worked as a Thai Massage practitioner in Pattani, a city in southern Thailand for twelve years before coming to Canada. My education continued in Canada where I trained at the Thai Massage Toronto School. Here I became certified in Thai and Aromatherapy massage. I am also a member of the Traditional Thai Massage Association Of Ontario.\n\nBy using my unique techniques through Thai Aroma Oil  Massage, Foot Reflexology, and Thai Massage, I have a very good understanding of how to apply stress relief, pain relief and/or a relaxing massage.",
+      "I'm from Thailand and I received my authentic traditional Thai massage training in Thailand in 2006. I worked as a Thai Massage practitioner in Pattani, a city in southern Thailand for twelve years before coming to Canada. My education continued in Canada where I trained at the Thai Massage Toronto School. Here I became certified in Thai and Aromatherapy massage. I am also a member of the Traditional Thai Massage Association Of Ontario.\n\nBy using my unique techniques through Thai Aroma Oil  Massage, Foot Reflexology and Thai Massage, I have a very good understanding of how to apply stress relief, pain relief and/or a relaxing massage.",
     image: require("../assets/images/wan.jpg"),
     color: "#f8ccf9",
   },
