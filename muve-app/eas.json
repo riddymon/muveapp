@@ -25,6 +25,11 @@
     "production": {
       "android": {
         "serviceAccountKeyPath": "/Users/dennis/Desktop/Service-Key/pc-api-9045967472772395107-649-319520cd47c0.json"
+      },
+      "ios": {
+        "appleId": "dennis.hall.bcs@gmail.com",
+        "ascAppId": "6444162709",
+        "appleTeamId": "J7Z86VJWAK"
       }
     }
   }

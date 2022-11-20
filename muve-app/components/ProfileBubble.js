@@ -5,7 +5,7 @@ export default function ProfileBubble({ profile, handlePress } = props) {
     container: {
       backgroundColor: profile.color,
       borderRadius: 40,
-      marginBottom: 15,
+      marginBottom: 10,
       padding: 10,
       width: "100%",
       display: "flex",
@@ -29,6 +29,7 @@ export default function ProfileBubble({ profile, handlePress } = props) {
     description: {
       alignItems: "center",
       width: "100%",
+      paddingHorizontal: 10,
     },
     tap: {},
     bubbleDescription: {

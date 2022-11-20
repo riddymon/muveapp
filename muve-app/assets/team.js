@@ -42,6 +42,17 @@ const team = [
     image: require("../assets/images/wan.jpg"),
     color: "#f8ccf9",
   },
+  {
+    name: "Rose Phillips",
+    position: "Office Administrator",
+    longTitle: "Office Administrator",
+    quote: "You need assistance? Ask Me!",
+    telephone: "",
+    description:
+      "I'm an experienced office administration professional with many years of experience.  My role at Müve is to keep the administrative engine purring so that our skilled therapists can focus on doing what they do best!",
+    image: require("../assets/images/rose.jpg"),
+    color: "#00b1e1",
+  },
 ];
 
 export default team;
