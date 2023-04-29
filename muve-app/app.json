@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "Müve",
+    "name": "Muve Therapy",
     "slug": "muve-app",
-    "version": "1.0.2",
+    "version": "1.0.4",
     "orientation": "portrait",
     "icon": "./assets/ic_launcher_foreground.png",
     "userInterfaceStyle": "light",
@@ -17,14 +17,14 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.muvermtstudio.muve"
+      "bundleIdentifier": "com.muvermtstudio.muveapp"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/ic_launcher_foreground.png",
         "backgroundColor": "#FFFFFF"
       },
-      "versionCode": 3,
+      "versionCode": 5,
       "package": "com.muvermtstudios.muveapp"
     },
     "web": {

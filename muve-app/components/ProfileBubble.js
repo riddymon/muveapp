@@ -46,6 +46,7 @@ export default function ProfileBubble({ profile, handlePress } = props) {
       fontFamily: "Raleway-Bold",
       fontSize: 16,
       opacity: 0.8,
+      textAlign: "center",
     },
     position: {
       fontFamily: "Raleway-Light",

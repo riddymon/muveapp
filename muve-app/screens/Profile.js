@@ -34,6 +34,7 @@ export default function Profile({ navigation, route }) {
       display: "flex",
       alignContent: "center",
       alignItems: "center",
+      paddingHorizontal: 10,
     },
     image: {
       width: 200,
@@ -124,9 +125,11 @@ export default function Profile({ navigation, route }) {
         <View style={styles.description}>
           <Text style={styles.descriptionText}>{profile.description}</Text>
         </View>
-        <View style={styles.sloganContainer}>
-          <Text style={styles.sloganText}>"{profile.quote}"</Text>
-        </View>
+        {profile.quote && (
+          <View style={styles.sloganContainer}>
+            <Text style={styles.sloganText}>"{profile.quote}"</Text>
+          </View>
+        )}
         <StatusBar style="light" />
       </View>
     </ScrollView>

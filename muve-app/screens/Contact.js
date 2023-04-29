@@ -39,6 +39,18 @@ export default function Contact() {
       <View style={styles.infoContainer}>
         <View style={styles.infoLabel}>
           <Ionicons
+            name="logo-instagram"
+            size={16}
+            color={Colors.navigationGreen}
+          ></Ionicons>
+        </View>
+        <View style={styles.infoDetails}>
+          <Text style={styles.infoDetailsText}>@muvermtstudio</Text>
+        </View>
+      </View>
+      {/* <View style={styles.infoContainer}>
+        <View style={styles.infoLabel}>
+          <Ionicons
             name="call"
             size={16}
             color={Colors.navigationGreen}
@@ -47,7 +59,7 @@ export default function Contact() {
         <View style={styles.infoDetails}>
           <Text style={styles.infoDetailsText}>(226) 338-7959</Text>
         </View>
-      </View>
+      </View> */}
       <View style={styles.infoContainer}>
         <View style={styles.infoLabel}>
           <Ionicons
