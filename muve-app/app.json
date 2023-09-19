@@ -2,7 +2,7 @@
   "expo": {
     "name": "Muve Therapy",
     "slug": "muve-app",
-    "version": "1.0.4",
+    "version": "1.0.6",
     "orientation": "portrait",
     "icon": "./assets/ic_launcher_foreground.png",
     "userInterfaceStyle": "light",
@@ -24,7 +24,7 @@
         "foregroundImage": "./assets/ic_launcher_foreground.png",
         "backgroundColor": "#FFFFFF"
       },
-      "versionCode": 5,
+      "versionCode": 7,
       "package": "com.muvermtstudios.muveapp"
     },
     "web": {
