@@ -86,10 +86,10 @@ const styles = StyleSheet.create({
   container: {
     display: "flex",
     flexDirection: "column",
-    height: "100%",
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: Colors.grey,
+    height: "100vh",
   },
 
   policyContainer: {

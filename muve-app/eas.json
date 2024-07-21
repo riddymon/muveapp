@@ -7,13 +7,17 @@
         "simulator": true
       },
       "env": {
-        "EAS_NO_VCS": "1"
+        "EAS_NO_VCS": "1",
+        "SUPABASE_URL": "https://uchbzhgpqlbcdnaxkjqk.supabase.co",
+        "SUPABASE_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVjaGJ6aGdwcWxiY2RuYXhranFrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjA0MDg1NTgsImV4cCI6MjAzNTk4NDU1OH0.rg70sKpgrS3d_KN1no9Xay_VO1wP3SRII88WNov2PTA"
       }
     },
     "preview": {
       "distribution": "internal",
       "env": {
-        "EAS_NO_VCS": "1"
+        "EAS_NO_VCS": "1",
+        "SUPABASE_URL": "https://uchbzhgpqlbcdnaxkjqk.supabase.co",
+        "SUPABASE_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVjaGJ6aGdwcWxiY2RuYXhranFrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjA0MDg1NTgsImV4cCI6MjAzNTk4NDU1OH0.rg70sKpgrS3d_KN1no9Xay_VO1wP3SRII88WNov2PTA"
       },
       "android": {
         "buildType": "apk"

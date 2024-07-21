@@ -1,29 +1,49 @@
-import { View, StyleSheet, ScrollView } from "react-native";
-import team from "../assets/team";
+import { View, StyleSheet, ScrollView, ActivityIndicator } from "react-native";
 import ProfileBubble from "../components/ProfileBubble";
 import { useNavigation } from "@react-navigation/native";
 import { StatusBar } from "react-native-web";
+import Colors from "../constants/Colors";
+import { useMuveStaff } from "../providers/MuveStaffProvider";
 
 export default function Team() {
   const navigation = useNavigation();
+  const { loading, staff } = useMuveStaff();
 
   return (
     <View style={styles.container}>
       <ScrollView style={styles.scrollContainer}>
         <StatusBar style="dark" />
-        <View style={styles.buttonContainer}>
-          {team.map((profile) => {
-            return (
-              <ProfileBubble
-                profile={profile}
-                key={profile.name}
-                handlePress={() => {
-                  navigation.navigate("Profile", { profile: profile });
-                }}
-              />
-            );
-          })}
-        </View>
+        {!loading && (
+          <View style={styles.buttonContainer}>
+            {staff.map((profile) => {
+              return (
+                <ProfileBubble
+                  profile={profile}
+                  key={profile.name}
+                  handlePress={() => {
+                    navigation.navigate("Profile", { profile: profile });
+                  }}
+                />
+              );
+            })}
+          </View>
+        )}
+        {loading && (
+          <ActivityIndicator
+            size="large"
+            color={Colors.navigationGreen}
+            style={{
+              height: "100vh",
+              position: "absolute",
+              left: 0,
+              right: 0,
+              top: 0,
+              bottom: 0,
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          />
+        )}
       </ScrollView>
     </View>
   );

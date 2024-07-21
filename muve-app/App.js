@@ -9,6 +9,7 @@ import * as Font from "expo-font";
 import BookStackScreen from "./screens/StackNavigators/BookStackScreen";
 import TeamStackScreen from "./screens/StackNavigators/TeamStackScreen";
 import ContactStackScreen from "./screens/StackNavigators/ContactStackScreen";
+import { MuveStaffProvider } from "./providers/MuveStaffProvider";
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -44,63 +45,65 @@ export default function App() {
     );
   } else {
     return (
-      <NavigationContainer>
-        <Tab.Navigator
-          initialRouteName="Home"
-          activeColor={Colors.activeGreen}
-          inactiveColor={Colors.inactiveGrey}
-          barStyle={{ backgroundColor: Colors.navigationGreen }}
-          shifting={false}
-        >
-          <Tab.Screen
-            name="Home"
-            component={Home}
-            options={{
-              tabBarIcon: ({ color }) => (
-                <Ionicons name="home" size={20} color={color}></Ionicons>
-              ),
-              tabBarLabel: <Text style={styles.tabBarLabel}>Home</Text>,
-            }}
-          />
+      <MuveStaffProvider>
+        <NavigationContainer>
+          <Tab.Navigator
+            initialRouteName="Home"
+            activeColor={Colors.activeGreen}
+            inactiveColor={Colors.inactiveGrey}
+            barStyle={{ backgroundColor: Colors.navigationGreen }}
+            shifting={false}
+          >
+            <Tab.Screen
+              name="Home"
+              component={Home}
+              options={{
+                tabBarIcon: ({ color }) => (
+                  <Ionicons name="home" size={20} color={color}></Ionicons>
+                ),
+                tabBarLabel: <Text style={styles.tabBarLabel}>Home</Text>,
+              }}
+            />
 
-          <Tab.Screen
-            name="Book"
-            component={BookStackScreen}
-            options={{
-              tabBarIcon: ({ color }) => (
-                <Ionicons
-                  name="add-circle-outline"
-                  size={20}
-                  color={color}
-                ></Ionicons>
-              ),
-              tabBarLabel: <Text style={styles.tabBarLabel}>Book</Text>,
-            }}
-          />
+            <Tab.Screen
+              name="Book"
+              component={BookStackScreen}
+              options={{
+                tabBarIcon: ({ color }) => (
+                  <Ionicons
+                    name="add-circle-outline"
+                    size={20}
+                    color={color}
+                  ></Ionicons>
+                ),
+                tabBarLabel: <Text style={styles.tabBarLabel}>Book</Text>,
+              }}
+            />
 
-          <Tab.Screen
-            name="The Team"
-            component={TeamStackScreen}
-            options={{
-              tabBarIcon: ({ color }) => (
-                <Ionicons name="people" size={20} color={color}></Ionicons>
-              ),
-              tabBarLabel: <Text style={styles.tabBarLabel}>The Team</Text>,
-            }}
-          />
+            <Tab.Screen
+              name="The Team"
+              component={TeamStackScreen}
+              options={{
+                tabBarIcon: ({ color }) => (
+                  <Ionicons name="people" size={20} color={color}></Ionicons>
+                ),
+                tabBarLabel: <Text style={styles.tabBarLabel}>The Team</Text>,
+              }}
+            />
 
-          <Tab.Screen
-            name="Contact Us"
-            component={ContactStackScreen}
-            options={{
-              tabBarIcon: ({ color }) => (
-                <Ionicons name="call" size={20} color={color}></Ionicons>
-              ),
-              tabBarLabel: <Text style={styles.tabBarLabel}>Contact Us</Text>,
-            }}
-          />
-        </Tab.Navigator>
-      </NavigationContainer>
+            <Tab.Screen
+              name="Contact Us"
+              component={ContactStackScreen}
+              options={{
+                tabBarIcon: ({ color }) => (
+                  <Ionicons name="call" size={20} color={color}></Ionicons>
+                ),
+                tabBarLabel: <Text style={styles.tabBarLabel}>Contact Us</Text>,
+              }}
+            />
+          </Tab.Navigator>
+        </NavigationContainer>
+      </MuveStaffProvider>
     );
   }
 }

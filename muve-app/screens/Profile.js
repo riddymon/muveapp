@@ -5,11 +5,14 @@ import { StatusBar } from "react-native-web";
 
 export default function Profile({ navigation, route }) {
   const { profile } = route.params;
+  console.log(profile.name === "");
   useLayoutEffect(() => {
     navigation.setOptions({
       title: profile.name,
       headerTintColor:
-        profile.name === "Wan Benlate" || profile.name === "Candace Young, RMT"
+        profile.name === "Wan Benlate" ||
+        profile.name === "Candace Young, RMT" ||
+        profile.name === "Casie Diebold, RMT"
           ? "black"
           : "white",
       headerStyle: {
@@ -19,7 +22,8 @@ export default function Profile({ navigation, route }) {
         fontFamily: "Raleway-Regular",
         color:
           profile.name === "Wan Benlate" ||
-          profile.name === "Candace Young, RMT"
+          profile.name === "Candace Young, RMT" ||
+          profile.name === "Casie Diebold, RMT"
             ? "black"
             : "white",
       },
@@ -57,7 +61,9 @@ export default function Profile({ navigation, route }) {
     profileTitle: {
       fontFamily: "Raleway-Regular",
       color:
-        profile.name === "Wan Benlate" || profile.name === "Candace Young, RMT"
+        profile.name === "Wan Benlate" ||
+        profile.name === "Candace Young, RMT" ||
+        profile.name === "Casie Diebold, RMT"
           ? "black"
           : Colors.white,
       fontSize: 18,
@@ -73,7 +79,9 @@ export default function Profile({ navigation, route }) {
     profileNumber: {
       fontFamily: "Raleway-Thin",
       color:
-        profile.name === "Wan Benlate" || profile.name === "Candace Young, RMT"
+        profile.name === "Wan Benlate" ||
+        profile.name === "Candace Young, RMT" ||
+        profile.name === "Casie Diebold, RMT"
           ? "black"
           : Colors.white,
       fontSize: 18,
@@ -90,7 +98,9 @@ export default function Profile({ navigation, route }) {
       fontFamily: "Raleway-Regular",
       fontSize: 14,
       color:
-        profile.name === "Wan Benlate" || profile.name === "Candace Young, RMT"
+        profile.name === "Wan Benlate" ||
+        profile.name === "Candace Young, RMT" ||
+        profile.name === "Casie Diebold, RMT"
           ? "black"
           : Colors.white,
       opacity: 0.7,
