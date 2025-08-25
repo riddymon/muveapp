@@ -4,13 +4,14 @@ import { useNavigation } from "@react-navigation/native";
 import { StatusBar } from "react-native-web";
 import Colors from "../constants/Colors";
 import { useMuveStaff } from "../providers/MuveStaffProvider";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Team() {
   const navigation = useNavigation();
   const { loading, staff } = useMuveStaff();
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView edges={[]} style={styles.container}>
       <ScrollView style={styles.scrollContainer}>
         <StatusBar style="dark" />
         {!loading && (
@@ -33,7 +34,7 @@ export default function Team() {
             size="large"
             color={Colors.navigationGreen}
             style={{
-              height: "100vh",
+              height: "100%",
               position: "absolute",
               left: 0,
               right: 0,
@@ -45,7 +46,7 @@ export default function Team() {
           />
         )}
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 }
 

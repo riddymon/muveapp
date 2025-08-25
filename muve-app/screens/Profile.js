@@ -2,10 +2,14 @@ import { View, Text, StyleSheet, Image, ScrollView } from "react-native";
 import { useLayoutEffect } from "react";
 import Colors from "../constants/Colors";
 import { StatusBar } from "react-native-web";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Profile({ navigation, route }) {
   const { profile } = route.params;
-  console.log(profile.name === "");
+  const image = profile.image;
+
+  const isLocalImage = typeof profile.image === "number";
+
   useLayoutEffect(() => {
     navigation.setOptions({
       title: profile.name,
@@ -33,12 +37,12 @@ export default function Profile({ navigation, route }) {
   const styles = StyleSheet.create({
     container: {
       height: "100%",
-      width: "100%",
       backgroundColor: profile.color,
       display: "flex",
       alignContent: "center",
       alignItems: "center",
       paddingHorizontal: 10,
+      flex: 1,
     },
     image: {
       width: 200,
@@ -119,29 +123,36 @@ export default function Profile({ navigation, route }) {
 
     scrollContainer: {
       height: "100%",
+      flex: 1,
+      display: "flex",
       backgroundColor: profile.color,
     },
   });
 
   return (
-    <ScrollView style={styles.scrollContainer}>
-      <View style={styles.container}>
-        <View style={styles.imageContainer}>
-          <Image style={styles.image} source={profile.image} />
-        </View>
-        <View>
-          <Text style={styles.profileTitle}>{profile.longTitle}</Text>
-        </View>
-        <View style={styles.description}>
-          <Text style={styles.descriptionText}>{profile.description}</Text>
-        </View>
-        {profile.quote && (
-          <View style={styles.sloganContainer}>
-            <Text style={styles.sloganText}>"{profile.quote}"</Text>
+    <SafeAreaView edges={[]} style={{ flex: 1 }}>
+      <ScrollView style={styles.scrollContainer}>
+        <View style={styles.container}>
+          <View style={styles.imageContainer}>
+            <Image
+              style={styles.image}
+              source={isLocalImage ? image : { uri: image }}
+            />
           </View>
-        )}
-        <StatusBar style="light" />
-      </View>
-    </ScrollView>
+          <View>
+            <Text style={styles.profileTitle}>{profile.longTitle}</Text>
+          </View>
+          <View style={styles.description}>
+            <Text style={styles.descriptionText}>{profile.description}</Text>
+          </View>
+          {profile.quote && (
+            <View style={styles.sloganContainer}>
+              <Text style={styles.sloganText}>"{profile.quote}"</Text>
+            </View>
+          )}
+          <StatusBar style="light" />
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 }

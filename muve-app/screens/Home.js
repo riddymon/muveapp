@@ -5,16 +5,17 @@ import {
   ScrollView,
   ImageBackground,
   Platform,
+  Image,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Colors from "../constants/Colors";
 import { StyleSheet } from "react-native";
-import Swirl from "../assets/images/swirl.svg";
 import ColoredLine from "../components/Separator";
 import InfoButton from "../components/InfoButton";
 import { Overlay } from "react-native-elements";
 import TopicsOverlay from "../components/TopicsOverlay";
 import { StatusBar } from "expo-status-bar";
+import "react-native-url-polyfill/auto";
 
 export default function Home() {
   const [visible, setVisible] = useState(false);
@@ -42,8 +43,9 @@ export default function Home() {
 
   return (
     <SafeAreaView
+      edges={["right", "top", "left"]}
       style={{
-        height: "100%",
+        flex: 1,
       }}
     >
       <View style={styles.headerImage}>
@@ -64,9 +66,12 @@ export default function Home() {
         <ScrollView style={styles.container}>
           <View style={styles.mainContent}>
             <Text style={styles.title}>Live in the Müvement</Text>
-            <View style={styles.swirl}>
-              <Swirl width={200} height={40} opacity={0.8} />
-            </View>
+
+            <Image
+              source={require("../assets/monstera-lg.png")}
+              style={styles.monsteraImage}
+            />
+
             <Text style={styles.description}>
               The basic philosophy of Müve embraces the concept of vis
               Medicatrix naturae, which is aiding the ability of the body to
@@ -74,9 +79,12 @@ export default function Home() {
             </Text>
             <ColoredLine color={Colors.black} />
             <Text style={styles.title}>Müve Towards....</Text>
-            <View style={styles.swirl}>
-              <Swirl width={200} height={40} opacity={0.8} />
-            </View>
+
+            <Image
+              source={require("../assets/monstera-lg.png")}
+              style={styles.monsteraImage}
+            />
+
             <View style={styles.contentList}>
               <View style={styles.row}>
                 <View style={styles.bullet}>
@@ -179,14 +187,14 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.white,
   },
   headerImage: {
+    flex: 0,
     width: "100%",
     height: 200,
     alignSelf: "stretch",
     backgroundColor: Colors.inactiveGrey,
   },
   scrollContainer: {
-    height: "100%",
-    paddingBottom: 150,
+    flex: 1,
     backgroundColor: "black",
   },
   homeTitle: {
@@ -219,12 +227,6 @@ const styles = StyleSheet.create({
     marginTop: 18,
   },
 
-  swirl: {
-    marginTop: 10,
-    marginBottom: 10,
-    alignItems: "center",
-  },
-
   description: {
     fontFamily: "Roboto-Light",
     fontSize: 16,
@@ -236,7 +238,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "flex-start",
     flexWrap: "wrap",
-    flex: 1,
+    flex: 0,
     marginStart: 10,
   },
   bullet: {
@@ -247,7 +249,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
   contentList: {
-    display: "flex",
+    flex: 0,
     flexDirection: "column",
     marginHorizontal: "15%",
     marginBottom: 10,
@@ -269,5 +271,16 @@ const styles = StyleSheet.create({
   mainContent: {
     marginBottom: 10,
     paddingBottom: 20,
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  monsteraImage: {
+    marginTop: 10,
+    marginBottom: 10,
+    width: 40,
+    height: 40,
+    resizeMode: "contain",
   },
 });

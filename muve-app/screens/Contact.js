@@ -4,6 +4,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import openMap from "react-native-open-maps";
 import sendEmail from "react-native-email";
 import { StatusBar } from "react-native-web";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Contact() {
   const goToMuve = () => {
@@ -23,32 +24,38 @@ export default function Contact() {
   };
 
   return (
-    <View style={styles.container}>
-      <View style={styles.infoContainer}>
-        <View style={styles.infoLabel}>
-          <Ionicons
-            name="mail"
-            size={16}
-            color={Colors.navigationGreen}
-          ></Ionicons>
+    <SafeAreaView
+      edges={[]}
+      style={{
+        flex: 1,
+      }}
+    >
+      <View style={styles.container}>
+        <View style={styles.infoContainer}>
+          <View style={styles.infoLabel}>
+            <Ionicons
+              name="mail"
+              size={16}
+              color={Colors.navigationGreen}
+            ></Ionicons>
+          </View>
+          <View style={styles.infoDetails}>
+            <Text style={styles.infoDetailsText}>muvermtstudio@gmail.com</Text>
+          </View>
         </View>
-        <View style={styles.infoDetails}>
-          <Text style={styles.infoDetailsText}>muvermtstudio@gmail.com</Text>
+        <View style={styles.infoContainer}>
+          <View style={styles.infoLabel}>
+            <Ionicons
+              name="logo-instagram"
+              size={16}
+              color={Colors.navigationGreen}
+            ></Ionicons>
+          </View>
+          <View style={styles.infoDetails}>
+            <Text style={styles.infoDetailsText}>@muvermtstudio</Text>
+          </View>
         </View>
-      </View>
-      <View style={styles.infoContainer}>
-        <View style={styles.infoLabel}>
-          <Ionicons
-            name="logo-instagram"
-            size={16}
-            color={Colors.navigationGreen}
-          ></Ionicons>
-        </View>
-        <View style={styles.infoDetails}>
-          <Text style={styles.infoDetailsText}>@muvermtstudio</Text>
-        </View>
-      </View>
-      {/* <View style={styles.infoContainer}>
+        {/* <View style={styles.infoContainer}>
         <View style={styles.infoLabel}>
           <Ionicons
             name="call"
@@ -60,47 +67,50 @@ export default function Contact() {
           <Text style={styles.infoDetailsText}>(226) 338-7959</Text>
         </View>
       </View> */}
-      <View style={styles.infoContainer}>
-        <View style={styles.infoLabel}>
-          <Ionicons
-            name="home"
-            size={16}
-            color={Colors.navigationGreen}
-          ></Ionicons>
+        <View style={styles.infoContainer}>
+          <View style={styles.infoLabel}>
+            <Ionicons
+              name="home"
+              size={16}
+              color={Colors.navigationGreen}
+            ></Ionicons>
+          </View>
+          <View style={styles.infoDetails}>
+            <Text style={styles.infoDetailsText}>
+              161 Victoria St S #1A, Kitchener, ON N2G 2B7
+            </Text>
+          </View>
         </View>
-        <View style={styles.infoDetails}>
-          <Text style={styles.infoDetailsText}>
-            161 Victoria St S #1A, Kitchener, ON N2G 2B7
-          </Text>
+        <TouchableOpacity style={styles.mapContainer} onPress={goToMuve}>
+          <View>
+            <Text style={styles.mapTitle}>
+              Tap the image to view our location
+            </Text>
+          </View>
+          <View>
+            <Image
+              style={styles.map}
+              source={require("../assets/images/map.png")}
+            />
+          </View>
+        </TouchableOpacity>
+        <View style={styles.emailButtonContainer}>
+          <View>
+            <Text style={styles.infoDetailsText}>
+              Any questions or comments?
+            </Text>
+          </View>
+          <View>
+            <TouchableOpacity activeOpacity={0.8} onPress={handleEmail}>
+              <View style={styles.emailButton}>
+                <Text style={styles.emailButtonText}>Contact Us</Text>
+              </View>
+            </TouchableOpacity>
+          </View>
         </View>
+        <StatusBar style="dark" />
       </View>
-      <TouchableOpacity style={styles.mapContainer} onPress={goToMuve}>
-        <View>
-          <Text style={styles.mapTitle}>
-            Tap the image to view our location
-          </Text>
-        </View>
-        <View>
-          <Image
-            style={styles.map}
-            source={require("../assets/images/map.png")}
-          />
-        </View>
-      </TouchableOpacity>
-      <View style={styles.emailButtonContainer}>
-        <View>
-          <Text style={styles.infoDetailsText}>Any questions or comments?</Text>
-        </View>
-        <View>
-          <TouchableOpacity activeOpacity={0.8} onPress={handleEmail}>
-            <View style={styles.emailButton}>
-              <Text style={styles.emailButtonText}>Contact Us</Text>
-            </View>
-          </TouchableOpacity>
-        </View>
-      </View>
-      <StatusBar style="dark" />
-    </View>
+    </SafeAreaView>
   );
 }
 

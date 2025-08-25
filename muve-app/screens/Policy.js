@@ -1,9 +1,8 @@
 import { useNavigation } from "@react-navigation/native";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Image } from "react-native";
 import { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Colors from "../constants/Colors";
-import Swirl from "../assets/images/swirl.svg";
 import PolicyButton from "../components/PolicyButton";
 import { Overlay } from "react-native-elements";
 import PolicyOverlay from "../components/PolicyOverlay";
@@ -34,16 +33,20 @@ export default function Policy() {
   };
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
         <View style={styles.policyContainer}>
           <Text style={styles.instructions}>
             Please take some time to review our policies before booking an
             appointment.
           </Text>
-          <View style={styles.swirl}>
-            <Swirl width={200} height={40} opacity={0.8} />
+          <View style={styles.monsteraContainer}>
+            <Image
+              source={require("../assets/monstera-lg.png")}
+              style={styles.monsteraImage}
+            />
           </View>
+
           <PolicyButton
             title="Clinic Policies"
             onPress={handleOpenClinicPolicy}
@@ -83,18 +86,21 @@ export default function Policy() {
 }
 
 const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+    backgroundColor: Colors.grey,
+  },
   container: {
-    display: "flex",
+    flex: 1,
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: Colors.grey,
-    height: "100vh",
+    padding: 20,
   },
 
   policyContainer: {
     backgroundColor: Colors.white,
-    marginHorizontal: 10,
     padding: 20,
     shadowOffset: {
       width: 0,
@@ -113,9 +119,16 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
 
-  swirl: {
+  monsteraImage: {
     marginTop: 10,
     marginBottom: 10,
+    width: 40,
+    height: 40,
+    resizeMode: "contain",
+  },
+
+  monsteraContainer: {
+    display: "flex",
     alignItems: "center",
   },
 });

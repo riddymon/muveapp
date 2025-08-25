@@ -55,12 +55,16 @@ export default function ProfileBubble({ profile, handlePress } = props) {
   });
 
   const bubbleImage = profile.image;
+  const isLocalImage = typeof profile.image === "number";
 
   return (
     <TouchableOpacity onPress={handlePress}>
       <View style={styles.container}>
         <View style={styles.imageContainer}>
-          <Image style={styles.image} source={profile.image} />
+          <Image
+            style={styles.image}
+            source={isLocalImage ? bubbleImage : { uri: bubbleImage }}
+          />
         </View>
         <View style={styles.bubbleDescription}>
           <View style={styles.description}>
