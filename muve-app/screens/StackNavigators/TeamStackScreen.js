@@ -1,7 +1,7 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Colors from "../../constants/Colors";
 import Team from "../../screens/Team";
 import Profile from "../../screens/Profile";
+import CustomHeader from "../../components/CustomHeader";
 
 const TeamStack = createNativeStackNavigator();
 
@@ -11,36 +11,30 @@ export default function TeamStackScreen() {
       <TeamStack.Screen
         name="Team"
         component={Team}
-        options={{
-          title: "Meet The Team",
-          headerShown: true,
-          headerShadowVisible: false,
-          headerTransparent: false,
-          headerTitleAlign: "center",
-          headerTitleStyle: {
-            fontFamily: "Raleway-Regular",
-            color: Colors.navigationGreen,
-          },
-          headerStyle: {
-            backgroundColor: "transparent",
-          },
-        }}
+        options={({ navigation, route }) => ({
+          header: () => (
+            <CustomHeader
+              navigation={navigation}
+              route={route}
+              isProfile={false}
+              title={"Meet The Team"}
+            />
+          ),
+        })}
       />
       <TeamStack.Screen
         name="Profile"
         component={Profile}
-        options={{
-          title: "Book A Massage",
-          headerShown: true,
-          headerShadowVisible: false,
-          headerTransparent: false,
-          headerTitleAlign: "center",
-          headerTitleStyle: {
-            fontFamily: "Raleway-Regular",
-            color: "white",
-          },
-          headerBackTitle: "Back",
-        }}
+        options={({ navigation, route }) => ({
+          header: () => (
+            <CustomHeader
+              navigation={navigation}
+              route={route}
+              isProfile={true}
+              title={""}
+            />
+          ),
+        })}
       />
     </TeamStack.Navigator>
   );

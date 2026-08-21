@@ -11,42 +11,40 @@ export default function Team() {
   const { loading, staff } = useMuveStaff();
 
   return (
-    <SafeAreaView edges={[]} style={styles.container}>
-      <ScrollView style={styles.scrollContainer}>
-        <StatusBar style="dark" />
-        {!loading && (
-          <View style={styles.buttonContainer}>
-            {staff.map((profile) => {
-              return (
-                <ProfileBubble
-                  profile={profile}
-                  key={profile.name}
-                  handlePress={() => {
-                    navigation.navigate("Profile", { profile: profile });
-                  }}
-                />
-              );
-            })}
-          </View>
-        )}
-        {loading && (
-          <ActivityIndicator
-            size="large"
-            color={Colors.navigationGreen}
-            style={{
-              height: "100%",
-              position: "absolute",
-              left: 0,
-              right: 0,
-              top: 0,
-              bottom: 0,
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          />
-        )}
-      </ScrollView>
-    </SafeAreaView>
+    <ScrollView style={styles.scrollContainer}>
+      <StatusBar style="dark" />
+      {!loading && (
+        <SafeAreaView style={styles.buttonContainer} edges={[]}>
+          {staff.map((profile) => {
+            return (
+              <ProfileBubble
+                profile={profile}
+                key={profile.name}
+                handlePress={() => {
+                  navigation.navigate("Profile", { profile: profile });
+                }}
+              />
+            );
+          })}
+        </SafeAreaView>
+      )}
+      {loading && (
+        <ActivityIndicator
+          size="large"
+          color={Colors.navigationGreen}
+          style={{
+            height: "100%",
+            position: "absolute",
+            left: 0,
+            right: 0,
+            top: 0,
+            bottom: 0,
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        />
+      )}
+    </ScrollView>
   );
 }
 
@@ -67,8 +65,10 @@ const styles = StyleSheet.create({
 
   scrollContainer: {
     height: "100%",
+    flex: 1,
   },
   buttonContainer: {
+    padding: 10,
     width: "100%",
   },
 });

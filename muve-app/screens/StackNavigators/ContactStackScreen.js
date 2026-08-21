@@ -1,6 +1,6 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Colors from "../../constants/Colors";
 import Contact from "../../screens/Contact";
+import CustomHeader from "../../components/CustomHeader";
 
 const ContactStack = createNativeStackNavigator();
 
@@ -10,20 +10,16 @@ export default function ContactStackScreen() {
       <ContactStack.Screen
         name="ContactScreen"
         component={Contact}
-        options={{
-          title: "How To Find Us",
-          headerShown: true,
-          headerShadowVisible: false,
-          headerTransparent: false,
-          headerTitleAlign: "center",
-          headerTitleStyle: {
-            fontFamily: "Raleway-Regular",
-            color: Colors.navigationGreen,
-          },
-          headerStyle: {
-            backgroundColor: "transparent",
-          },
-        }}
+        options={({ navigation, route }) => ({
+          header: () => (
+            <CustomHeader
+              navigation={navigation}
+              route={route}
+              isProfile={false}
+              title={"How To Find Us"}
+            />
+          ),
+        })}
       />
     </ContactStack.Navigator>
   );

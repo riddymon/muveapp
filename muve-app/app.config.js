@@ -1,0 +1,50 @@
+require("dotenv").config();
+
+const { getDefaultConfig } = require("expo/metro-config");
+
+/**
+ * Expo configuration
+ * @type {import('expo/config').ExpoConfig}
+ */
+const config = {
+  name: "Muve Therapy",
+  slug: "muve-app",
+  version: "1.2.0",
+  orientation: "portrait",
+  icon: "./assets/ic_launcher_foreground.png",
+  userInterfaceStyle: "light",
+  splash: {
+    image: "",
+    resizeMode: "contain",
+    backgroundColor: "#ffffff",
+  },
+  updates: {
+    fallbackToCacheTimeout: 0,
+  },
+  assetBundlePatterns: ["**/*"],
+  ios: {
+    supportsTablet: true,
+    bundleIdentifier: "com.muvermtstudio.muveapp",
+  },
+  android: {
+    adaptiveIcon: {
+      foregroundImage: "./assets/ic_launcher_foreground.png",
+      backgroundColor: "#FFFFFF",
+    },
+    versionCode: 12,
+    package: "com.muvermtstudios.muveapp",
+  },
+  web: {
+    favicon: "./assets/favicon.png",
+  },
+  extra: {
+    eas: {
+      projectId: "00ce5241-7a6b-4dd2-ae7c-cc7214cdb250",
+    },
+    SUPABASE_URL: process.env.SUPABASE_URL,
+    SUPABASE_KEY: process.env.SUPABASE_KEY,
+  },
+  plugins: ["expo-status-bar"],
+};
+
+module.exports = config;

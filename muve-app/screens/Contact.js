@@ -9,8 +9,8 @@ import { SafeAreaView } from "react-native-safe-area-context";
 export default function Contact() {
   const goToMuve = () => {
     openMap({
-      latitude: 43.44848,
-      longitude: -80.50214,
+      latitude: 43.45868805511084,
+      longitude: -80.4841592,
       zoom: 19,
       query: "Müve Registered Massage Therapy Studio",
     });
@@ -18,44 +18,36 @@ export default function Contact() {
 
   const handleEmail = async () => {
     const to = "muvermtstudio@gmail.com";
-    console.log(
-      await sendEmail(to, { subject: "Inquiry", checkCanOpen: false })
-    );
+    await sendEmail(to, { subject: "Inquiry", checkCanOpen: false });
   };
 
   return (
-    <SafeAreaView
-      edges={[]}
-      style={{
-        flex: 1,
-      }}
-    >
-      <View style={styles.container}>
-        <View style={styles.infoContainer}>
-          <View style={styles.infoLabel}>
-            <Ionicons
-              name="mail"
-              size={16}
-              color={Colors.navigationGreen}
-            ></Ionicons>
-          </View>
-          <View style={styles.infoDetails}>
-            <Text style={styles.infoDetailsText}>muvermtstudio@gmail.com</Text>
-          </View>
+    <SafeAreaView style={styles.container} edges={[]}>
+      <View style={styles.infoContainer}>
+        <View style={styles.infoLabel}>
+          <Ionicons
+            name="mail"
+            size={16}
+            color={Colors.navigationGreen}
+          ></Ionicons>
         </View>
-        <View style={styles.infoContainer}>
-          <View style={styles.infoLabel}>
-            <Ionicons
-              name="logo-instagram"
-              size={16}
-              color={Colors.navigationGreen}
-            ></Ionicons>
-          </View>
-          <View style={styles.infoDetails}>
-            <Text style={styles.infoDetailsText}>@muvermtstudio</Text>
-          </View>
+        <View style={styles.infoDetails}>
+          <Text style={styles.infoDetailsText}>muvermtstudio@gmail.com</Text>
         </View>
-        {/* <View style={styles.infoContainer}>
+      </View>
+      <View style={styles.infoContainer}>
+        <View style={styles.infoLabel}>
+          <Ionicons
+            name="logo-instagram"
+            size={16}
+            color={Colors.navigationGreen}
+          ></Ionicons>
+        </View>
+        <View style={styles.infoDetails}>
+          <Text style={styles.infoDetailsText}>@muvermtstudio</Text>
+        </View>
+      </View>
+      {/* <View style={styles.infoContainer}>
         <View style={styles.infoLabel}>
           <Ionicons
             name="call"
@@ -67,49 +59,46 @@ export default function Contact() {
           <Text style={styles.infoDetailsText}>(226) 338-7959</Text>
         </View>
       </View> */}
-        <View style={styles.infoContainer}>
-          <View style={styles.infoLabel}>
-            <Ionicons
-              name="home"
-              size={16}
-              color={Colors.navigationGreen}
-            ></Ionicons>
-          </View>
-          <View style={styles.infoDetails}>
-            <Text style={styles.infoDetailsText}>
-              161 Victoria St S #1A, Kitchener, ON N2G 2B7
-            </Text>
-          </View>
+      <View style={styles.infoContainer}>
+        <View style={styles.infoLabel}>
+          <Ionicons
+            name="home"
+            size={16}
+            color={Colors.navigationGreen}
+          ></Ionicons>
         </View>
-        <TouchableOpacity style={styles.mapContainer} onPress={goToMuve}>
-          <View>
-            <Text style={styles.mapTitle}>
-              Tap the image to view our location
-            </Text>
-          </View>
-          <View>
-            <Image
-              style={styles.map}
-              source={require("../assets/images/map.png")}
-            />
-          </View>
-        </TouchableOpacity>
-        <View style={styles.emailButtonContainer}>
-          <View>
-            <Text style={styles.infoDetailsText}>
-              Any questions or comments?
-            </Text>
-          </View>
-          <View>
-            <TouchableOpacity activeOpacity={0.8} onPress={handleEmail}>
-              <View style={styles.emailButton}>
-                <Text style={styles.emailButtonText}>Contact Us</Text>
-              </View>
-            </TouchableOpacity>
-          </View>
+        <View style={styles.infoDetails}>
+          <Text style={styles.infoDetailsText}>
+            300 Victoria St N, Kitchener, ON N2H 6R9
+          </Text>
         </View>
-        <StatusBar style="dark" />
       </View>
+      <TouchableOpacity style={styles.mapContainer} onPress={goToMuve}>
+        <View>
+          <Text style={styles.mapTitle}>
+            Tap the image to view our location
+          </Text>
+        </View>
+        <View>
+          <Image
+            style={styles.map}
+            source={require("../assets/images/map.png")}
+          />
+        </View>
+      </TouchableOpacity>
+      <View style={styles.emailButtonContainer}>
+        <View>
+          <Text style={styles.infoDetailsText}>Any questions or comments?</Text>
+        </View>
+        <View>
+          <TouchableOpacity activeOpacity={0.8} onPress={handleEmail}>
+            <View style={styles.emailButton}>
+              <Text style={styles.emailButtonText}>Contact Us</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+      </View>
+      <StatusBar style="dark" />
     </SafeAreaView>
   );
 }
@@ -118,6 +107,7 @@ const styles = StyleSheet.create({
   container: {
     marginHorizontal: 20,
     marginTop: 20,
+    flex: 1,
   },
   infoContainer: {
     width: "100%",

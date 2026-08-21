@@ -2,13 +2,14 @@ import { View, Text, StyleSheet, Image, ScrollView } from "react-native";
 import { useLayoutEffect } from "react";
 import Colors from "../constants/Colors";
 import { StatusBar } from "react-native-web";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 export default function Profile({ navigation, route }) {
   const { profile } = route.params;
   const image = profile.image;
 
   const isLocalImage = typeof profile.image === "number";
+  const insets = useSafeAreaInsets();
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -21,6 +22,8 @@ export default function Profile({ navigation, route }) {
           : "white",
       headerStyle: {
         backgroundColor: profile.color,
+        paddingTop: insets.top,
+        height: 56 + insets.top,
       },
       headerTitleStyle: {
         fontFamily: "Raleway-Regular",
@@ -31,6 +34,26 @@ export default function Profile({ navigation, route }) {
             ? "black"
             : "white",
       },
+      // headerTitle: () => (
+      //   <Text
+      //     style={{
+      //       fontFamily: "Raleway-Regular",
+      //       fontSize: 18,
+      //       // paddingTop: insets.top,
+      //       // paddingBottom: insets.bottom,
+      //       // paddingLeft: insets.left,
+      //       // paddingRight: insets.right,
+      //       color:
+      //         profile.name === "Wan Benlate" ||
+      //         profile.name === "Candace Young, RMT" ||
+      //         profile.name === "Casie Diebold, RMT"
+      //           ? "black"
+      //           : "white",
+      //     }}
+      //   >
+      //     {profile.name}
+      //   </Text>
+      // ),
     });
   }, [navigation]);
 
@@ -130,29 +153,27 @@ export default function Profile({ navigation, route }) {
   });
 
   return (
-    <SafeAreaView edges={[]} style={{ flex: 1 }}>
-      <ScrollView style={styles.scrollContainer}>
-        <View style={styles.container}>
-          <View style={styles.imageContainer}>
-            <Image
-              style={styles.image}
-              source={isLocalImage ? image : { uri: image }}
-            />
-          </View>
-          <View>
-            <Text style={styles.profileTitle}>{profile.longTitle}</Text>
-          </View>
-          <View style={styles.description}>
-            <Text style={styles.descriptionText}>{profile.description}</Text>
-          </View>
-          {profile.quote && (
-            <View style={styles.sloganContainer}>
-              <Text style={styles.sloganText}>"{profile.quote}"</Text>
-            </View>
-          )}
-          <StatusBar style="light" />
+    <ScrollView style={styles.scrollContainer}>
+      <View style={styles.container}>
+        <View style={styles.imageContainer}>
+          <Image
+            style={styles.image}
+            source={isLocalImage ? image : { uri: image }}
+          />
         </View>
-      </ScrollView>
-    </SafeAreaView>
+        <View>
+          <Text style={styles.profileTitle}>{profile.longTitle}</Text>
+        </View>
+        <View style={styles.description}>
+          <Text style={styles.descriptionText}>{profile.description}</Text>
+        </View>
+        {profile.quote && (
+          <View style={styles.sloganContainer}>
+            <Text style={styles.sloganText}>"{profile.quote}"</Text>
+          </View>
+        )}
+        <StatusBar style="light" />
+      </View>
+    </ScrollView>
   );
 }
